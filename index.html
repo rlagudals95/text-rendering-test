@@ -44,7 +44,7 @@
     <p>OS: <span id="os-info"></span></p>
 
     <label for="text-input">Text Input:</label>
-    <input id="text-input" type="text" oninput="drawTextBy2dContext()" value="Hello World">
+    <input id="text-input" type="text" oninput="drawTextBy2dContext(); drawTextByWeb()" value="Hello World">
     <select id="font-select" onchange="drawTextBy2dContext()">
       <option value="sans-serif">Sans-serif</option>
       <option value="serif">Serif</option>
@@ -112,7 +112,7 @@
         </tr>
       </table>
     </div>
-    <div><textarea cols="80" rows="20" id="text"></textarea></div>
+    <!-- <div><textarea cols="80" rows="20" id="text"></textarea></div> -->
 
 
   </div>
@@ -121,19 +121,21 @@
       <h1>Web Font Rendering</h1>
     </div>
     <p id="p-text"></p>
+    <p>Web Text Width: <span id="web-text-width"></span></p>
+    <p>Web Text Height: <span id="web-text-height"></span></p>
   </div>
-  <script async src="./webgl/fonts/roboto.js"></script>
-  <script async src="./webgl/fonts/roboto-bold.js"></script>
-  <script async src="./webgl/fonts/dejavu-serif.js"></script>
-  <script async src="./webgl/fonts/dejavu-serif-italic.js"></script>
-  <script async src="./webgl/fonts/ubuntu.js"></script>
-  <script async src="./webgl/fonts/ubuntu-bold.js"></script>
+  <script src="./webgl/fonts/roboto.js"></script>
+  <script src="./webgl/fonts/roboto-bold.js"></script>
+  <script src="./webgl/fonts/dejavu-serif.js"></script>
+  <script src="./webgl/fonts/dejavu-serif-italic.js"></script>
+  <script src="./webgl/fonts/ubuntu.js"></script>
+  <script src="./webgl/fonts/ubuntu-bold.js"></script>
 
-  <script async src="./webgl/glutils.js"></script>
-  <script async src="./webgl/textutils.js"></script>
-  <script async src="./webgl/vshader.js"></script>
-  <script async src="./webgl/fshader.js"></script>
-  <script async src="./webgl/main.js"></script>
+  <script src="./webgl/glutils.js"></script>
+  <script src="./webgl/textutils.js"></script>
+  <script src="./webgl/vshader.js"></script>
+  <script src="./webgl/fshader.js"></script>
+  <script src="./webgl/main.js"></script>
   <script>
     glMain();
   </script>
