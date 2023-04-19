@@ -74,7 +74,7 @@ function drawTextBy2dContext() {
   // Draw text
   const text = textInput.value;
   const lines = text.split('\n');
-  let y = 50;
+  let y = 100;
   // for (const line of lines) {
   //   ctx.fillText(line, 10, y);
   //   y += parseFloat(lineHeight);
