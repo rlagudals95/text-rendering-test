@@ -142,10 +142,31 @@
   <script src="./webgl/fshader.js"></script>
   <script src="./webgl/main.js"></script>
   <script>
-    glMain();
+    //glMain();
   </script>
   <script async src="textRenderBy2d.js"></script>
   <script async src="textRenderByWeb.js"></script>
+  <script>
+    const select = document.getElementById('font-select');
+
+    select.addEventListener("change", () => {
+      drawTextBy2dContext(); drawTextByWeb()
+    })
+
+    const fontsizeInput = document.getElementById("font-size-input");
+
+    fontsizeInput.addEventListener("change", () => {
+      drawTextBy2dContext(); drawTextByWeb()
+    })
+
+    const fontweightInput = document.getElementById("font-weight-input");
+
+    fontweightInput.addEventListener("change", () => {
+      drawTextBy2dContext(); drawTextByWeb()
+    })
+
+    //font-size-input
+  </script>
 </body>
 
 </html>

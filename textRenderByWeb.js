@@ -1,6 +1,7 @@
 
 
 function drawTextByWeb() {
+
   const webTextInput = document.getElementById('text-input');
   const webFontSelect = document.getElementById('font-select');
   const webFontSizeInput = document.getElementById('font-size-input');
@@ -25,6 +26,7 @@ function drawTextByWeb() {
 
   p.style.fontFamily = webFont;
   p.style.fontSize = webFontSize;
+  //console.log(webFontWeight)
   p.style.fontWeight = webFontWeight;
   //p.style.lineHeight = webLineHeight;
   p.style.letterSpacing = webLetterSpacing;
