@@ -39,7 +39,15 @@ const textWidth = document.getElementById('text-width');
 const textHeight = document.getElementById('text-height');
 const antialiasingCheckbox = document.getElementById('antialiasing-checkbox');
 // Set line height
-ctx.textBaseline = 'top';
+ctx.imageSmoothingEnabled = true;
+var dpr = window.devicePixelRatio || 1;
+var rect = canvas.getBoundingClientRect();
+// Give the canvas pixel dimensions of their CSS
+// size * the device pixel ratio.
+canvas.width = rect.width * dpr;
+canvas.height = rect.height * dpr;
+
+//ctx.textBaseline = 'top';
 
 function drawTextBy2dContext() {
 
@@ -53,27 +61,31 @@ function drawTextBy2dContext() {
   // Set font and fill color
   const lineHeight = `${lineHeightInput.value * parseFloat(fontSize)}px`;
   const letterSpacing = `${letterSpacingInput.value}px`;
+  
   ctx.font = `${fontWeight} ${fontSize} ${font}`;
+
+
   ctx.fillStyle = 'black';
 
   // Set line height
-  ctx.textBaseline = 'top';
-  ctx.lineHeight = lineHeight;
+  //ctx.textBaseline = 'top';
+  //ctx.lineHeight = lineHeight;
 
   // Draw text
   const text = textInput.value;
   const lines = text.split('\n');
   let y = 50;
-  for (const line of lines) {
-    ctx.fillText(line, 10, y);
-    y += parseFloat(lineHeight);
-  }
+  // for (const line of lines) {
+  //   ctx.fillText(line, 10, y);
+  //   y += parseFloat(lineHeight);
+  // }
+  ctx.fillText(text, 0, y);
 
   // Measure text width and height
   const textMetrics = ctx.measureText(text);
 
   const width = textMetrics.width;
-  const height = parseFloat(lineHeight) * lines.length;
+  const height = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent; // 텍스트의 높이
 
   // Display text width and height
   textWidth.textContent = width;
