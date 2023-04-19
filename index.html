@@ -39,11 +39,12 @@
   </div>
 
   <div align="center" style="margin-top: 50px;">
-    <!-- <div>
+    <div>
       <h1>WebGL Font Rendering</h1>
     </div>
     <canvas width="700" height="400" id="glcanvas"></canvas> 
-    <p>Text Width: <span id="gl-text-width"></span></p>
+    <!-- <canvas width="700" height="400" id="glcanvas"></canvas>  -->
+    <!--  <p>Text Width: <span id="gl-text-width"></span></p>
     <p>Text Height: <span id="gl-text-height"></span></p> -->
     <table width="400">
       <tr style="display: none;">
@@ -142,10 +143,13 @@
   <script src="./webgl/fshader.js"></script>
   <script src="./webgl/main.js"></script>
   <script>
-    //glMain();
+    glMain();
   </script>
   <script async src="textRenderBy2d.js"></script>
   <script async src="textRenderByWeb.js"></script>
+  <script async src="textRenderByThree.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <script>
     const select = document.getElementById('font-select');
 
