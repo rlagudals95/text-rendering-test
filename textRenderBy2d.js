@@ -23,47 +23,40 @@ const osInfoText = `${os}`;
 browserInfo.textContent = browserInfoText;
 osInfo.textContent = osInfoText;
 
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const textInput = document.getElementById('text-input');
-const fontSelect = document.getElementById('font-select');
-const fontSizeInput = document.getElementById('font-size-input');
-const fontWeightInput = document.getElementById('font-weight-input');
-const letterSpacingInput = document.getElementById('letter-spacing-input');
-const lineHeightInput = document.getElementById('line-height-input');
-const fontSize = `${fontSizeInput.value}px`;
-const fontWeight = fontWeightInput.value;
-const lineHeight = `${lineHeightInput.value * parseFloat(fontSize)}px`;
-const letterSpacing = `${letterSpacingInput.value}px`;
-const textWidth = document.getElementById('text-width');
-const textHeight = document.getElementById('text-height');
-const antialiasingCheckbox = document.getElementById('antialiasing-checkbox');
-// Set line height
-ctx.imageSmoothingEnabled = true;
-var dpr = window.devicePixelRatio || 1;
-var rect = canvas.getBoundingClientRect();
-// Give the canvas pixel dimensions of their CSS
-// size * the device pixel ratio.
-canvas.width = rect.width //* dpr;
-canvas.height = rect.height //* dpr;
-
-//ctx.textBaseline = 'top';
-
 function drawTextBy2dContext() {
 
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const textInput = document.getElementById('text-input');
+  const fontSelect = document.getElementById('font-select');
+  const fontSizeInput = document.getElementById('font-size-input');
+  const fontWeightInput = document.getElementById('font-weight-input');
+  const letterSpacingInput = document.getElementById('letter-spacing-input');
+  const lineHeightInput = document.getElementById('line-height-input');
+  const textWidth = document.getElementById('text-width');
+  const textHeight = document.getElementById('text-height');
+  const antialiasingCheckbox = document.getElementById('antialiasing-checkbox');
+  // Set line height
+  ctx.imageSmoothingEnabled = true;
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  // Give the canvas pixel dimensions of their CSS
+  // size * the device pixel ratio.
+  canvas.width = rect.width //* dpr;
+  canvas.height = rect.height //* dpr;
   // Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Set font and fill color
   const font = fontSelect.value;
 
   const fontSize = `${fontSizeInput.value}px`;
-  //console.log('fontSize :: ', fontSize)
+
   const fontWeight = fontWeightInput.value;
 
   // Set font and fill color
   const lineHeight = `${lineHeightInput.value * parseFloat(fontSize)}px`;
   const letterSpacing = `${letterSpacingInput.value}px`;
-  
+
   ctx.font = `${fontWeight} ${fontSize} ${font}`;
 
 
