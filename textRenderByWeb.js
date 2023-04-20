@@ -1,5 +1,3 @@
-
-
 function drawTextByWeb() {
 
   const webTextInput = document.getElementById('text-input');
@@ -25,6 +23,7 @@ function drawTextByWeb() {
   p.style.display = 'inline-block';
 
   p.style.fontFamily = webFont;
+  //console.log('webFontSize ::', webFontSize)
   p.style.fontSize = webFontSize;
   //console.log(webFontWeight)
   p.style.fontWeight = webFontWeight;
@@ -63,17 +62,10 @@ function drawTextByWeb() {
 
   const width = rect.width;
 
-
+  
   // Set the text width and height
-  webTextWidth.innerText = width;
-  webTextHeight.innerText = height;
+  webTextWidth.innerText = `p tag width : ${rect.width} / actual width : ${width}`;
+  webTextHeight.innerText = `p tag height : ${rect.height} / actual height : ${height}`;
 }
-
-
-// fontSelect.onchange = function () {
-
-//   // Redraw canvas with new font
-//   drawTextByWeb();
-// };
 
 drawTextByWeb();

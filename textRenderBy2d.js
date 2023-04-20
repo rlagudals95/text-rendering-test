@@ -44,8 +44,8 @@ var dpr = window.devicePixelRatio || 1;
 var rect = canvas.getBoundingClientRect();
 // Give the canvas pixel dimensions of their CSS
 // size * the device pixel ratio.
-canvas.width = rect.width * dpr;
-canvas.height = rect.height * dpr;
+canvas.width = rect.width //* dpr;
+canvas.height = rect.height //* dpr;
 
 //ctx.textBaseline = 'top';
 
@@ -55,7 +55,9 @@ function drawTextBy2dContext() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Set font and fill color
   const font = fontSelect.value;
+
   const fontSize = `${fontSizeInput.value}px`;
+  //console.log('fontSize :: ', fontSize)
   const fontWeight = fontWeightInput.value;
 
   // Set font and fill color
